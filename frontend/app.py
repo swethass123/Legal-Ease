@@ -3,11 +3,14 @@ import requests
 import streamlit as st
 from dotenv import load_dotenv
 
-from backend.document_utils.formatters import (
-    format_docx,
-    format_pdf,
-    format_html_preview
-)
+def format_docx(content):
+    return content
+
+def format_pdf(content):
+    return content
+
+def format_html_preview(content):
+    return content
 
 # ------------------------------------------------
 # ENVIRONMENT
