@@ -1,25 +1,19 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from . import routes
 
-from backend.routes import router
+app = FastAPI()
 
-app = FastAPI(
-    title="LegalEase API",
-    description="AI-Powered Legal Document Generator",
-    version="1.0.0"
-)
-
-# CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:8501",
-        "http://127.0.0.1:8501"
-    ],
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Include API routes
-app.include_router(router)
+app.include_router(routes.router)
+
+@app.get("/")
+def home():
+    return {"message": "Backend Running"}
