@@ -1,5 +1,8 @@
+streamlit
+python-docx
+groq
+python-dotenv
 fastapi
 uvicorn
-python-dotenv
-openai
-pydantic
+PyPDF2
+reportlab
